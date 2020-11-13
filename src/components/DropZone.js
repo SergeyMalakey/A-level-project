@@ -44,11 +44,13 @@ export default connect(
             state.promiseReducer.сurrentPlayList &&
             state.promiseReducer.сurrentPlayList.payload &&
             state.promiseReducer.сurrentPlayList.payload.data &&
+            state.promiseReducer.сurrentPlayList.payload.data.PlaylistFindOne &&
             state.promiseReducer.сurrentPlayList.payload.data.PlaylistFindOne._id,
         arr:
             state.promiseReducer.сurrentPlayList &&
             state.promiseReducer.сurrentPlayList.payload &&
             state.promiseReducer.сurrentPlayList.payload.data &&
+            state.promiseReducer.сurrentPlayList.payload.data.PlaylistFindOne &&
             state.promiseReducer.сurrentPlayList.payload.data.PlaylistFindOne.tracks,
     }),null
 )
