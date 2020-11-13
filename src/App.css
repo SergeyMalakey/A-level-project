@@ -1,0 +1,327 @@
+.App {
+  text-align: center;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+*, :before, :after{
+  box-sizing: border-box;
+}
+.wrapper{
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.pre{
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+ /*max-width: 250px;*/
+  color: chartreuse;
+  text-align: center;
+  max-height: 100%;
+}
+.track-list{
+  height: 200px;
+  border: 2px solid black;
+  overflow: auto;
+}
+.track-list p{
+  padding-left: 10px;
+  border-bottom: 1px darkgrey;
+  margin-top: 2px;
+  margin-bottom: 0;
+
+}
+.track-list p:hover{
+  /*background-color: darkgrey;*/
+}
+.registration-form__wrapper{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(0deg, #121212, #383838 );
+  color: darkgray;
+}
+.registration-form__wrapper button{
+  color: chartreuse;
+  padding: 0;
+  border: 1px solid #a9a9a9;
+}
+.registration-form__wrapper button:hover{
+  border: 1px solid chartreuse;
+}
+.registration-form__wrapper button:disabled{
+  color: #a9a9a9;
+  border: 1px solid #a9a9a9;
+}
+
+.registration-form{
+  border: 1px solid chartreuse;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background:linear-gradient(180deg, #121212, #383838 );
+}
+
+.registration-form *{
+  margin: 4px;
+}
+#dialog{
+  border: 2px solid chartreuse;
+  border-radius: 10px;
+  padding: 5px;
+  /*display: flex;*/
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: #a9a9a9;
+  background:linear-gradient(0deg, #121212, #383838 );
+  margin: auto;
+  min-width: 50%;
+  /*display: inline-block;*/
+/*  ;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;*/
+}
+dialog::backdrop{
+  background-color: #282828;
+  opacity: 0.7;
+}
+#dialog *{
+  margin: 2px auto;
+  text-align:center;
+}
+
+/*dialog button{
+  margin-top: 5px;
+  font-size: 18px;
+}*/
+
+
+.registration-form input{
+/*background-color: darkgrey;*/
+}
+.registration-form button{
+ /* color: chartreuse;
+  background-color: darkgrey;*/
+  font-size: 18px;
+}
+.header-div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin:5px
+}
+.header-div p{
+  margin: 0;
+}
+
+.aside{
+  padding: 10px;
+  width: 30%;
+  border: 1px solid white;
+  box-sizing: border-box;
+  /*overflow: auto;*/
+  overflow: hidden;
+  height: 100%;
+  background-color: #161616;
+  color: darkgray;
+
+}
+.playlist-all{
+
+  /*border: 1px solid white;*/
+  /*overflow: auto;*/
+  /*overflow: hidden;*/
+  /*overflow-y: scroll;*/
+  /*overflow-x: scroll;*/
+  /*box-sizing: border-box;*/
+  max-height: 100%;
+  padding: 10px;
+
+}
+.playlist-all p{
+  margin: 0;
+  color: white;
+
+}
+.playlist-one{
+  color: darkgray;
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+  border-bottom: 1px solid #282828;
+
+
+}
+.playlist-one:hover {
+  cursor: default;
+  color: white;
+}
+.main-wrapper{
+  flex-wrap: wrap;
+  display: flex;
+  padding: 5px;
+  /*min-height: 100vh;*/
+  background:linear-gradient(0deg, #121212, #383838 ) ;
+  color: darkgray;
+  /*overflow: auto;*/
+  overflow: hidden;
+  flex: 1 0 auto;
+
+
+}
+.main{
+  width: 69%;
+  /*border: 1px solid #121212;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-left: 10px;
+}
+
+.main__description{
+  border: 1px solid white;
+  height: 30%;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.main__description__description-song{
+  display: flex;
+}
+.main__description__description-song-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 30px;
+  text-align: center;
+  padding:0 20px;
+
+}
+.main__description__description-song-teg{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 20px;
+  padding: 27px;
+}
+.main__description__dropzone{
+
+min-width: 70px;
+  font-size: 70px;
+  text-align: center;
+  margin: auto 0;
+  color: chartreuse;
+
+}
+.main__tracklist-current{
+  border: 1px solid white;
+  height: 40%;
+  overflow: auto;
+  padding:10px;
+
+
+
+}
+
+.main__tracklist-current-name{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+
+}
+.main__track-current{
+  border-bottom: 2px solid #383838;
+  display: flex;
+  justify-content: space-between;
+}
+.main__track-current:hover{
+
+  cursor: default;
+  background-color: #404040;
+
+}
+
+.footer{
+  border: 1px solid black;
+  width: 100%;
+  padding: 6px;
+  background-color: #282828;
+  color: darkgray;
+  flex: 0 0 auto;
+
+}
+
+
+/*display: flex;*/
+/*!*flex-direction: column;*!*/
+/*!*align-items: center;*!*/
+.footer-name{
+  color: white;
+  display: flex;
+  justify-content: center;
+
+}
+.footer-player{
+  display: flex;
+  justify-content: center;
+}
+.footer-player button{
+  border-radius: 50%;
+  width: 56px;
+  box-shadow: none;
+  border: none;
+  color: #282828;
+  font-size: 14px;
+  font-weight: bold;
+}
+audio{
+
+}
