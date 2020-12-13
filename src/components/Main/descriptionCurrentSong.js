@@ -1,30 +1,22 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import {connect} from "react-redux";
 import DropZone from "../DropZone";
 
 const DescriptionCurrentSong=(props)=>{
-/*debugger;*/
     return(
         <div className={"main__description"}>
-            <div className={"main__description__description-song"}>
-
-                <div className={"main__description__description-song-name"}>
-                    <div >{props.title ||"Мелани" }</div>
-                    <div>{props.artist || "Ассаи"}</div>
-                </div>
-                <div className={"main__description__description-song-teg"}>
-                    <div> album: {props.album    || "Аврора опа"}</div>
-                    <div>genre: {props.genre || "Hip-Hop"}</div>
-                </div>
+            <div className={"main__description-song-name"}>
+                <div>{props.title || "Мелани"}</div>
+                <div>{props.artist || "Ассаи"}</div>
+            </div>
+            <div className={"main__description-song-teg"}>
+                <div> album: {props.album || "Аврора опа"}</div>
+                <div>genre: {props.genre || "Hip-Hop"}</div>
             </div>
             <DropZone/>
-
-
         </div>
     )
 }
-
-
 export default connect(
     (state)=>({
 

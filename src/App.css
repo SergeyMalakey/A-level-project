@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 .App-logo {
@@ -13,7 +12,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,7 +26,6 @@
 .App-link {
   color: #61dafb;
 }
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,7 +34,6 @@
     transform: rotate(360deg);
   }
 }
-
 img{
   max-width: 100%;
   height: auto;
@@ -52,9 +48,6 @@ img{
   flex-direction: column;
 }
 .pre{
-  /*margin-left: auto;*/
-  /*margin-right: auto;*/
- /*max-width: 250px;*/
   color: chartreuse;
   text-align: center;
   max-height: 100%;
@@ -69,10 +62,6 @@ img{
   border-bottom: 1px darkgrey;
   margin-top: 2px;
   margin-bottom: 0;
-
-}
-.track-list p:hover{
-  /*background-color: darkgrey;*/
 }
 .registration-form__wrapper{
   height: 100vh;
@@ -94,7 +83,6 @@ img{
   color: #a9a9a9;
   border: 1px solid #a9a9a9;
 }
-
 .registration-form{
   border: 1px solid chartreuse;
   border-radius: 10px;
@@ -105,7 +93,6 @@ img{
   justify-content: space-between;
   background:linear-gradient(180deg, #121212, #383838 );
 }
-
 .registration-form *{
   margin: 4px;
 }
@@ -121,11 +108,6 @@ img{
   background:linear-gradient(0deg, #121212, #383838 );
   margin: auto;
   min-width: 50%;
-  /*display: inline-block;*/
-/*  ;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;*/
 }
 dialog::backdrop{
   background-color: #282828;
@@ -135,19 +117,9 @@ dialog::backdrop{
   margin: 2px auto;
   text-align:center;
 }
-
-/*dialog button{
-  margin-top: 5px;
-  font-size: 18px;
-}*/
-
-
 .registration-form input{
-/*background-color: darkgrey;*/
 }
 .registration-form button{
- /* color: chartreuse;
-  background-color: darkgrey;*/
   font-size: 18px;
 }
 .header-div{
@@ -160,43 +132,27 @@ dialog::backdrop{
 .header-div p{
   margin: 0;
 }
-
 .aside{
   padding: 10px;
   width: 30%;
   border: 1px solid white;
   box-sizing: border-box;
-  /*overflow: auto;*/
   overflow: hidden;
   height: 100%;
   background-color: #161616;
   color: darkgray;
-
 }
 .playlist-all{
-
-  /*border: 1px solid white;*/
-  /*overflow: auto;*/
-  /*overflow: hidden;*/
-  /*overflow-y: scroll;*/
-  /*overflow-x: scroll;*/
-  /*box-sizing: border-box;*/
   max-height: 100%;
   padding: 10px;
-
 }
 .playlist-all p{
   margin: 0;
   color: white;
-
 }
 .playlist-one{
   color: darkgray;
-  /*padding-left: 10px;*/
-  /*padding-right: 10px;*/
   border-bottom: 1px solid #282828;
-
-
 }
 .playlist-one:hover {
   cursor: default;
@@ -206,89 +162,107 @@ dialog::backdrop{
   flex-wrap: wrap;
   display: flex;
   padding: 5px;
-  /*min-height: 100vh;*/
   background:linear-gradient(0deg, #121212, #383838 ) ;
   color: darkgray;
-  /*overflow: auto;*/
   overflow: hidden;
-  flex: 1 0 auto;
-
-
+  flex-grow: 1;
 }
 .main{
   width: 69%;
-  /*border: 1px solid #121212;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   padding-left: 10px;
 }
-
 .main__description{
   border: 1px solid white;
   height: 30%;
   color: white;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
-.main__description__description-song{
-  display: flex;
-}
-.main__description__description-song-name{
+.main__description-song-name{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   font-size: 30px;
   text-align: center;
-  padding:0 20px;
+  padding: 5px;
 
 }
-.main__description__description-song-teg{
+.main__description-song-teg{
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
-  padding: 27px;
+  padding: 5px;
+
 }
 .main__description__dropzone{
-
-min-width: 70px;
-  font-size: 70px;
-  text-align: center;
+  padding: 5px;
+  font-size: 80px;
   margin: auto 0;
+  align-content: center;
   color: chartreuse;
-
 }
 .main__tracklist-current{
   border: 1px solid white;
-  height: 40%;
+  height: 50%;
   overflow: auto;
-  padding:10px;
+  padding: 0 10px 10px 10px;
 
-
-
+  position: relative;
+  /*display: flex;
+  flex-direction: column;*/
 }
-
 .main__tracklist-current-name{
+  padding-top: 10px;
+  position: sticky;
+  top: 0;
+  background-color: #282828;
+
+
   color: white;
   display: flex;
   justify-content: space-between;
+}
+
+.main__tracklist-current-name input {
+  outline: none;
+  padding-left: 5px;
+  background-color: #383838;
+  color: white;
+  border: none;
+}
+
+.main__tracklist-current-list{
+  height: 90%;
+}
+.main__tracklist-current-list-preloader{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 
 }
+
+
 .main__track-current{
   border-bottom: 2px solid #383838;
   display: flex;
   justify-content: space-between;
-}
-.main__track-current:hover{
 
+}
+
+.main__track-current:hover{
   cursor: default;
   background-color: #404040;
-
 }
-
 .footer{
   border: 1px solid black;
   width: 100%;
@@ -296,18 +270,11 @@ min-width: 70px;
   background-color: #282828;
   color: darkgray;
   flex: 0 0 auto;
-
 }
-
-
-/*display: flex;*/
-/*!*flex-direction: column;*!*/
-/*!*align-items: center;*!*/
 .footer-name{
   color: white;
   display: flex;
   justify-content: center;
-
 }
 .footer-player{
   display: flex;
@@ -321,7 +288,4 @@ min-width: 70px;
   color: #282828;
   font-size: 14px;
   font-weight: bold;
-}
-audio{
-
 }

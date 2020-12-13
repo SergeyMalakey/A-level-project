@@ -1,28 +1,9 @@
 import React from "react"
-import {useState} from "react";
 import {connect} from "react-redux";
-import actionCreatorLogout from "../../actioncreators/actionCreatorsLogout";
 import store from "../../store/store";
-import actionCreatorIndexOfCurrentTrack from "../../actioncreators/actionCreatorIndexOfCurrentTrack";
 import actionCreatorCurrentTrack from "../../actioncreators/actionCreatorCurrentTrack";
 
-/*
-import {TextField} from "@material-ui/core"
-<TextField id="standard-basic" label="Standard" />
-*/
-
 const Player = (props)=>{
-
-   /* var jsmediatags = require("jsmediatags");
-    jsmediatags.read("http://player.asmer.fs.a-level.com.ua/track/0c751aeed5f529c6393a035a5fb7d9e7", {
-        onSuccess: function(tag) {
-            console.log(tag);
-        },
-        onError: function(error) {
-            console.log(error);
-        }
-    });*/
-
     function prevTrack() {
         let mathPain =(props.currentPlaylistArr.length + (props.index - 1)%props.currentPlaylistArr.length)%props.currentPlaylistArr.length
        store.dispatch(actionCreatorCurrentTrack(props.currentPlaylistArr[mathPain]._id, mathPain))
@@ -32,9 +13,6 @@ const Player = (props)=>{
     }
     return(
         <div className={"footer"}>
-           {/* <div className={"footer-name"}>
-                { props.currentTrackName || "Track Name"}
-            </div>*/}
             <div className={"footer-player"}>
                 <button onClick={
                     () => prevTrack()
@@ -95,8 +73,3 @@ export default connect(
     }),
     null
 )(Player)
-//
-// <button
-// // onClick={()=> store.dispatch(actionCreatorIndexOfCurrentTrack(props.allSongsArr[props.index-1].originalFileName, props.allSongsArr[props.index -1].url))}
-// /*onClick={ store.dispatch(actionCreatorIndexOfCurrentTrack(item.originalFileName, item.ur))}*/
-// >prev</button>

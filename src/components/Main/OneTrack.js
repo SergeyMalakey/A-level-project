@@ -1,15 +1,10 @@
 import React, {useEffect, useRef} from "react";
-import actionCreatorPromise from "../../actioncreators/actionCreatorPromise";
-import gql from "../../commonThings/gql";
 import actionCreatorCurrentTrack from "../../actioncreators/actionCreatorCurrentTrack";
 import store from "../../store/store";
 import {connect} from "react-redux";
 import actionCreatorDeleteTrack from "../../actioncreators/actionCreatorDeleteTrack";
 
-
-
 const OneTrack = (props)=>{
-
     let style = {}
     if (props.index===props.currentIndex % props.currentPlayListLength){
         style = {
@@ -24,17 +19,21 @@ const OneTrack = (props)=>{
     const ref = useRef()
     return(
         <div className={"main__track-current"} ref={ref} style={style}>
-            <div onClick={()=>{
-                store.dispatch(actionCreatorCurrentTrack(props.track._id,props.index))
+            <div onClick={() => {
+                store.dispatch(actionCreatorCurrentTrack(props.track._id, props.index))
             }}>
-                {props.track && props.track.originalFileName}
+                {props.track && props.track.originalFileName.includes(".mp3") ?
+                    props.track.originalFileName.split(".mp3")[0]
+                    :
+                    props.track.originalFileName
+                }
             </div>
             <div
-                onClick={()=>
-                store.dispatch(actionCreatorDeleteTrack(
-                    props.currentPlayListTracksArr,
-                    props.index,
-                    props.currentPlayListId
+                onClick={() =>
+                    store.dispatch(actionCreatorDeleteTrack(
+                        props.currentPlayListTracksArr,
+                        props.index,
+                        props.currentPlayListId
                     ))
                 }
             >x</div>

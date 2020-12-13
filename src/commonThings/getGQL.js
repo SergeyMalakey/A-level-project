@@ -1,4 +1,3 @@
-
 const getGQL = (url, headers={}) =>
     (query="", variables={}) =>
         fetch(url,

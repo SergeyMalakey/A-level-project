@@ -12,7 +12,6 @@ function actionCreatorRegistration(login, password){
            }
         }
          `)))
-
         if(registrationAnswer.data.createUser!=null){
         await dispatch(actionCreatorFullLogin(login, password))}
     }

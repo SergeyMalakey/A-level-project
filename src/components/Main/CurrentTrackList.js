@@ -1,28 +1,37 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import {connect} from "react-redux";
-import CurrentTrack from "./OneTrack";
 import Preloader from "../../commonThings/preloader";
 import OneTrack from "./OneTrack";
 
-const CurrentTrackList=(props)=>{
-/*debugger;*/
-    return(
+const CurrentTrackList = (props) => {
+    const [inputText, setInputText] = useState("")
+    return (
         <div className={"main__tracklist-current"}>
-             <div className={"main__tracklist-current-name"}> { props.playlistName?
-                 "Playlist: " + props.playlistName :
-                 "Playlist: "
-             }
-                 { props.status==="PENDING"? <Preloader/>:""}
-             </div>
-            { props.status===undefined ? "Choose a Playlist":""}
-            { props.status==="RESOLVED" && props.tracks!=null?
-                props.tracks.map((track,index) =>
-                <OneTrack track={track} index={index} key={index}/>):""}
+            <div className={"main__tracklist-current-name"}>
+                <span>{props.playlistName ? `Playlist: ${props.playlistName}` : "Choose a playlist"}</span>
+                {props.playlistName && <span>
+                                            <input
+                                                placeholder={"find track"}
+                                                className={"main__tracklist-input"}
+                                                onChange={(e) => setInputText(e.target.value)}
+                                            />
+                                        </span>
+                }
+            </div>
+            <div className={"main__tracklist-current-list"}>
+                {props.status === "PENDING" ?
+                    <div className={"main__tracklist-current-list-preloader"}><Preloader/></div> : ""}
+                {props.status === undefined ? "Choose a Playlist" : ""}
+                {props.status === "RESOLVED" && props.tracks != null ?
+                    props.tracks.map((track, index) => track.originalFileName.toLowerCase().includes(inputText.toLowerCase()) &&
+                        <OneTrack track={track} index={index} key={index}/>)
+                    : ""}
+            </div>
         </div>
     )
 }
 export default connect(
-    (state)=>({
+    (state) => ({
         playlistName:
             state.promiseReducer.сurrentPlayList &&
             state.promiseReducer.сurrentPlayList.payload &&

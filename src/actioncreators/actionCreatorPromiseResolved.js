@@ -5,6 +5,5 @@ const actionCreatorPromiseResolved = (name,payload)=>{
         payload,
         error:null,
         name
-
     }}
 export default actionCreatorPromiseResolved

@@ -2,7 +2,7 @@ import actionCreatorPromisePending from "./actionCreatorPromisePending";
 import actionCreatorPromiseResolved from "./actionCreatorPromiseResolved";
 import actionCreatorPromiseRejected from "./actionCreatorPromiseRejected";
 
- function actionCreatorPromise(name, promise){
+function actionCreatorPromise(name, promise){
     return async dispatch => {
         dispatch(actionCreatorPromisePending(name))
         try {

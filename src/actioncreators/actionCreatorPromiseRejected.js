@@ -1,6 +1,4 @@
-
 const actionCreatorPromiseRejected = (name,error)=>{
-
     return {
         type:"PROMISE",
         status:"REJECTED",
